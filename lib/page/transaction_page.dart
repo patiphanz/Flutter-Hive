@@ -34,7 +34,6 @@ class _TransactionPageState extends State<TransactionPage> {
           valueListenable: Boxes.getTransactions().listenable(),
           builder: (context, box, _) {
             final transactions = box.values.toList().cast<Transaction>();
-
             return buildContent(transactions);
           },
         ),

@@ -5,5 +5,5 @@ part 'total_balance.g.dart';
 @HiveType(typeId: 1)
 class TotalBalance extends HiveObject {
   @HiveField(0)
-  late var amount;
+  var amount;
 }

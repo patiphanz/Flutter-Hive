@@ -11,7 +11,8 @@ Future main() async {
   await Hive.initFlutter();
 
   Hive.registerAdapter(TransactionAdapter());
-  Hive.openBox<Transaction>('transactions');
+  Hive.registerAdapter(TotalBalanceAdapter());
+  await Hive.openBox<Transaction>('transactions');
   await Hive.openBox<TotalBalance>('totalBalance');
 
   runApp(const MyApp());
