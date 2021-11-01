@@ -16,7 +16,9 @@ class TotalBalanceAdapter extends TypeAdapter<TotalBalance> {
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return TotalBalance()..amount = fields[0] as dynamic;
+    return TotalBalance(
+      amount: fields[0] as dynamic,
+    );
   }
 
   @override

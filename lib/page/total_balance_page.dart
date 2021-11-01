@@ -12,7 +12,9 @@ class TotalBalancePage extends StatelessWidget {
   Widget build(BuildContext context) {
     String? totalBalance = ModalRoute.of(context)!.settings.arguments as String?;
     
-    var totalBalances = TotalBalance()..amount = totalBalance;
+    var totalBalances = TotalBalance(
+      amount: totalBalance,
+    );
     var box = Boxes.getTotalBalance();
 
     

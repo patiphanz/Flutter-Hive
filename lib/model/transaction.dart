@@ -4,6 +4,8 @@ part 'transaction.g.dart';
 
 @HiveType(typeId: 0)
 class Transaction extends HiveObject {
+  Transaction({required this.name, required this.createdDate, required this.isExpense, required this.amount});
+
   @HiveField(0)
   late String name;
 

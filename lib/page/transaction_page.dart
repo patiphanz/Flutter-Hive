@@ -53,6 +53,7 @@ class _TransactionPageState extends State<TransactionPage> {
             ),
             const SizedBox(height: 8),
             FloatingActionButton(
+              heroTag: 'summaryButton',
               child: const Icon(Icons.account_balance_wallet),
               onPressed: () {
                 Navigator.push(
@@ -176,11 +177,11 @@ class _TransactionPageState extends State<TransactionPage> {
       );
 
   Future addTransaction(String name, double amount, bool isExpense) async {
-    final transaction = Transaction()
-      ..name = name
-      ..createdDate = DateTime.now()
-      ..amount = amount
-      ..isExpense = isExpense;
+    final transaction = Transaction(
+      name: name,
+      createdDate: DateTime.now(),
+      amount: amount,
+      isExpense: isExpense);
 
     final box = Boxes.getTransactions();
     box.add(transaction);

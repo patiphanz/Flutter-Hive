@@ -16,11 +16,12 @@ class TransactionAdapter extends TypeAdapter<Transaction> {
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Transaction()
-      ..name = fields[0] as String
-      ..createdDate = fields[1] as DateTime
-      ..isExpense = fields[2] as bool
-      ..amount = fields[3] as double;
+    return Transaction(
+      name: fields[0] as String,
+      createdDate: fields[1] as DateTime,
+      isExpense: fields[2] as bool,
+      amount: fields[3] as double,
+    );
   }
 
   @override
